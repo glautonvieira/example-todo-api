@@ -5,7 +5,7 @@ node('php'){
     }
     
     stage('Fetch') {
-        git 'https://github.com/glauton/example-todo-api.git'
+        git 'https://github.com/glautonvieira/example-todo-api.git'
     }
     
     stage('Build'){
@@ -15,10 +15,10 @@ node('php'){
     }
     
     stage('Docker Build') {
-        sh 'sudo docker build -t glauton/todoapi:$BUILD_NUMBER .'
+        sh 'sudo docker build -t glautonvieira/todoapi:$BUILD_NUMBER .'
     }
     
     stage('Docker Ship') {
-        sh 'sudo docker push glauton/todoapi:$BUILD_NUMBER'
+        sh 'sudo docker push glautonvieira/todoapi:$BUILD_NUMBER'
     }
 }
